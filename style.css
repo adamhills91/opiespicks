@@ -8,6 +8,15 @@ body {
     font-family: 'Montserrat', sans-serif;
 }
 
+a {
+    text-decoration: none;
+}
+
+.navbar {
+    /* background-color: var(--alternate-background); */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
 .navbar-logo {
     display: flex;   
     justify-content: center;
@@ -57,7 +66,7 @@ border-color: #fff;
     color: var(--orange);
 }
 
-.down-item:hover {
+.dropdown-item:hover {
     background: var(--orange);
     color: white;
 }
@@ -119,54 +128,6 @@ border-color: #fff;
     background: var(--light-orange);
 }
 
-/* .carousel-inner {
-    max-height: 500px;
-}
-
-.carousel-item {
-    -webkit-transform-style: preserve-3d;
-    -moz-transform-style: preserve-3d;
-    transform-style: preserve-3d;
-}
-
-.carousel-caption {
-    top: 40%;
-    transform: translateY(-30%);
-    bottom: initial;
-}
-
-.carousel-caption h2 {
-    color: white;
-    font-weight: 700;
-    font-size: 6vw;
-    width: 65%;
-    margin: 0 auto 20px;
-} */
-
-/* .carousel-caption button {
-    background: var(--orange);
-    border: none;
-    padding: 7px 13px;
-    font-size: 2.5vw;
-    color: white;
-    border-radius: 50px;
-} */
-/* 
-.carousel-indicators {
-    margin-bottom: 0;
-}
-
-.carousel-indicators [data-bs-target] {
-    background-color: var(--orange);
-    border-radius: 100%;
-    width: 10px;
-    height: 10px;
-}
-
-.carousel-image {
-    position: relative;
-} */
-
 .grey-fade {
     background-color: rgba(0, 0, 0, 0.4);
     position: absolute;
@@ -180,10 +141,12 @@ section {
     padding: 40px 0;
 }
 
-#title {
+h1 {
     color: var(--orange);
     font-weight: 700;
-    width: 70%;
+}
+
+#title {
     margin: 0 auto 30px;
 }
 
@@ -218,7 +181,6 @@ section h2 {
 }
 
 .card a {
-    text-decoration: none;
     color: #000;
 }
 
@@ -299,20 +261,24 @@ footer {
     color: white;
     border-top: 1px solid rgba(255, 255, 255, 0.3);
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    text-align: center;
 }
 
 #footer-nav ul {
     margin: 10px 0;
     padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
 }
 
 #footer-nav ul li {
     list-style-type: none;
-    margin: 5px 15px;
+    margin: 5px 20px;
+    display: inline-block;
 }
+
+#footer-nav ul li a {
+    color: white;
+}
+
 
 .contact-group {
     display: flex;
@@ -371,6 +337,99 @@ footer {
     border-top: 1px solid rgba(255, 255, 255, 0.3);
 }
 
+#supported-brands {
+    background-color: var(--alternate-background);
+}
+
+#supported-brands h1 {
+    /* color: white; */
+}
+
+#supported-brands h6 {
+    margin-bottom: 30px;
+}
+
+#supported-brands p {
+    font-size: 0.8em;
+    color: black;
+}
+
+.brand-grid {
+    display: flex;
+    background-color: white;
+    align-items: baseline;
+}
+
+.brand-grid img {
+    width: 80%;
+    display: block;
+    margin: 0 auto 10px;
+}
+
+.brand-cell {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: white;
+    padding: 30px 10px;
+    text-align: center;
+}
+
+.brand-grid img.brand-thin {
+    width: 50%;
+}
+
+.supported-brand-logo {
+    width: 40%;
+    margin-bottom: 30px;
+    max-height: 500px;
+}
+
+.products {
+    margin-top: 60px;
+}
+
+#opies-pick {
+     padding-bottom: 0;
+}
+
+.btn-primary {
+    background-color: var(--orange);
+    border: none;
+    padding: 10px 70px;
+}
+.btn-primary:hover {
+    background-color: var(--light-orange);
+}
+
+.contact-page-social {
+    display: flex;
+    /* flex-direction: column; */
+    background-color: var(--orange);
+    color: white;
+    padding: 10px;
+}
+
+.contact-page-social:first-of-type {
+    padding-top: 20px;
+}
+.contact-page-social:last-of-type {
+    padding-bottom: 20px;
+}
+.contact-page-social a {
+    color: white;
+    display: flex;
+    align-items: center;
+    margin: 0 10px;
+    font-size: 0.8em;
+}
+
+.contact-page-social i {
+    font-size: 2em;
+    margin-right: 5px;
+}
+
 @media (min-width: 425px) {
     .slider-btn {
         font-size: 1em;
@@ -381,15 +440,16 @@ footer {
     .category-square-text h3 {
         font-size: 1.2em;
     }
+    
 }
 
 
 @media (min-width: 768px) {
     .navbar-brand img {
-        width: 120px; 
+        width: 90px; 
     }
     .nav-link, .dropdown-item {
-        font-size: 1.2em;
+        font-size: 1em;
     }
 
     .dropdown-item {
@@ -422,8 +482,10 @@ footer {
         flex-direction: column;
         text-align: right;
         font-size: 1.2em;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
     }
-
     .contact-detail{
         font-size: 1.1em;
     }
@@ -454,9 +516,16 @@ footer {
     .developer-info {
         width: auto;
     }
+    .supported-brand-logo {
+        width: 20%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
 
 @media (min-width: 992px) {
+    
     .dropdown:hover > .dropdown-menu {
         display:block;
     }
@@ -497,5 +566,14 @@ footer {
     
     .carousel-caption h5 {
         font-size: 6em;
+    }
+    .btn-primary {
+        padding: 10px 25px;
+    }
+}
+
+@media (min-width: 1400px) {
+    .navbar-brand img {
+        width: 120px; 
     }
 }
